@@ -48,6 +48,7 @@ public class LoginServlet extends HttpServlet {
 		String path = null;
 		EmpService empService = new EmpServiceImpl();
 		
+		
 		Emp emp = new Emp();
 		emp.setEname(username);
 		emp.setPassword(password);
@@ -59,7 +60,7 @@ public class LoginServlet extends HttpServlet {
 			path = "login.jsp";
 			System.out.println(empDb2.getJob());
 		}
-		
+		request.getSession().setAttribute("", "");
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 
